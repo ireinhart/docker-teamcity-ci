@@ -1,0 +1,17 @@
+server:
+  image: sjoerdmulder/teamcity
+  volumes:
+    - /var/lib/teamcity:/var/lib/teamcity
+    - /root/.ssh/:/root/.ssh/
+  ports:
+    - "8111:8111"
+agent-docker:
+  build: .
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/bin/docker:/usr/bin/docker
+    - /lib/x86_64-linux-gnu/libdevmapper.so.1.02.1:/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1
+  environment:
+    - TEAMCITY_SERVER=http://server:8111
+  links:
+    - server:server
