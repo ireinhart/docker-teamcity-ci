@@ -17,7 +17,8 @@ if [ ! -d "$AGENT_DIR/bin" ]; then
     done
     wget $TEAMCITY_SERVER/update/buildAgent.zip && unzip -d $AGENT_DIR buildAgent.zip && rm buildAgent.zip
     chmod +x $AGENT_DIR/bin/agent.sh
-    echo "serverUrl=${TEAMCITY_SERVER}" > $AGENT_DIR/conf/buildAgent.properties
+    AGENT_IP=`hostname -i`
+    echo -e "serverUrl=${TEAMCITY_SERVER}\nname=${AGENT_IP}" > $AGENT_DIR/conf/buildAgent.properties
 fi
 
 /opt/buildAgent/bin/agent.sh run
