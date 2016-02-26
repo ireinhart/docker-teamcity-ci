@@ -2,7 +2,6 @@ server:
   image: sjoerdmulder/teamcity
   volumes:
     - /var/lib/teamcity:/var/lib/teamcity
-    - /root/.ssh/:/root/.ssh/
   ports:
     - "8111:8111"
 agent-docker:
