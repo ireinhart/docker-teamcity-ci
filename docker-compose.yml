@@ -16,5 +16,3 @@ services:
       - /lib/x86_64-linux-gnu/libdevmapper.so.1.02.1:/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1
     environment:
       - TEAMCITY_SERVER=http://server:8111
-    links:
-      - server:server
