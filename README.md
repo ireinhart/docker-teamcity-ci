@@ -10,7 +10,7 @@ docker in docker: [http://container-solutions.com/running-docker-in-jenkins-in-d
 
 ## requirements
 
-The host has to run docker version 1.10.2 or later and must be an ubuntu wily release. If you like to run other OS versions please check the `docker-compose.yml` for volume `/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1`.
+The host has to run docker version 1.10.2 or later and can be an ubuntu wily or xenial release. If you like to run other OS versions please check the `docker-compose.yml` for volume `/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1`.
 For a simpler container management please use *docker-compose* version 1.6.2 or later to start/stop and build the "app".
 
 ## start
