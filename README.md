@@ -1,4 +1,4 @@
-# docker-teamcity-ci
+# JetBrains TeamCity CI docker image with jet client
 
 Simple TeamCity setup. You can start an TeamCity server instance and one (default) or more TeamCity agents with docker and jet installed.
 The agent uses the docker daemon from the host.
