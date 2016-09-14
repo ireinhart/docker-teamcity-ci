@@ -3,9 +3,9 @@
 Simple TeamCity setup. You can start an TeamCity server instance and one (default) or more TeamCity agents with docker and jet installed.
 The agent uses the docker daemon from the host.
 
-TeamCity: [https://www.jetbrains.com/teamcity/](https://www.jetbrains.com/teamcity/)
-docker: [https://www.docker.com/products/docker-engine](https://www.docker.com/products/docker-engine)
-jet: [https://codeship.com/documentation/docker/installation/#jet](https://codeship.com/documentation/docker/installation/#jet)
+TeamCity: [https://www.jetbrains.com/teamcity/](https://www.jetbrains.com/teamcity/)<br>
+docker: [https://www.docker.com/products/docker-engine](https://www.docker.com/products/docker-engine)<br>
+jet: [https://codeship.com/documentation/docker/installation/#jet](https://codeship.com/documentation/docker/installation/#jet)<br>
 docker in docker: [http://container-solutions.com/running-docker-in-jenkins-in-docker/](http://container-solutions.com/running-docker-in-jenkins-in-docker/)
 
 ## requirements
