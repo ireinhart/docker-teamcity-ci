@@ -2,7 +2,7 @@ FROM java:8
 
 MAINTAINER Ingo Reinhart <ingo.reinhart@gmail.com>
 
-ENV TEAMCITY_VERSION 9.1.7
+ENV TEAMCITY_VERSION 10.0.1
 ENV TEAMCITY_DATA_PATH /var/lib/teamcity
 
 RUN apt-get update && apt-get -y upgrade && apt-get -y --PURGE autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
