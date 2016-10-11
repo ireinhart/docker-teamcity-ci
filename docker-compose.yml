@@ -1,18 +1,18 @@
 version: '2'
 services:
   server:
-    image: ireinhart/teamcity:server-latest
-    build: ./server/
+    image: jetbrains/teamcity-server
     volumes:
-      - /var/lib/teamcity:/var/lib/teamcity
+      - /var/lib/teamcity/datadir:/data/teamcity_server/datadir
+      - /var/lib/teamcity/logs:/opt/teamcity/logs
     ports:
       - "8111:8111"
-  agent-docker:
-    image: ireinhart/teamcity:agent-dj-latest
+  agent-docker-jet:
     build: ./agent/docker-jet
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
       - /lib/x86_64-linux-gnu/libdevmapper.so.1.02.1:/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1
+      - /var/lib/teamcity/agent:/data/teamcity_agent/conf
     environment:
-      - TEAMCITY_SERVER=http://server:8111
+      - SERVER_URL=http://server:8111

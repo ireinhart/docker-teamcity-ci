@@ -1,12 +1,4 @@
-# JetBrains TeamCity CI docker image with jet client
-
-Simple TeamCity setup. You can start an TeamCity server instance and one (default) or more TeamCity agents with docker and jet installed.
-The agent uses the docker daemon from the host.
-
-TeamCity: [https://www.jetbrains.com/teamcity/](https://www.jetbrains.com/teamcity/)<br>
-docker: [https://www.docker.com/products/docker-engine](https://www.docker.com/products/docker-engine)<br>
-jet: [https://codeship.com/documentation/docker/installation/#jet](https://codeship.com/documentation/docker/installation/#jet)<br>
-docker in docker: [http://container-solutions.com/running-docker-in-jenkins-in-docker/](http://container-solutions.com/running-docker-in-jenkins-in-docker/)
+# JetBrains TeamCity CI with an agent that contains docker and jet
 
 ## requirements
 
@@ -14,12 +6,6 @@ The host has to run docker version 1.10.2 or later and can be an ubuntu wily or 
 For a simpler container management please use *docker-compose* version 1.6.2 or later to start/stop and build the "app".
 
 ## start
-
-With images from hub.docker.com:
-
-`docker-compose pull && docker-compose up -d --force-recreate --no-build`
-
-or build and start your own images:
 
 `docker-compose build --no-cache && docker-compose up -d --force-recreate`
 
@@ -29,7 +15,7 @@ or build and start your own images:
 
 ## scaling
 
-`docker-compose scale agent-docker=2`
+`docker-compose scale agent-docker-jet=2`
 
 
 ## restart
@@ -43,7 +29,3 @@ or build and start your own images:
 ## data store
 
 The files are saved on the host at `/var/lib/teamcity` and can be easily copied for backup.
-
-## credits
-
-Most work was done by [https://github.com/sjoerdmulder/teamcity-docker](https://github.com/sjoerdmulder/teamcity-docker). Visit his repository for more information about the TeamCity server image.
